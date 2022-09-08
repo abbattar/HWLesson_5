@@ -13,7 +13,7 @@ int[] FillArray(int length)
 {
     int[] array = new int[length];
     Random random = new Random();
-    for (int i = 0; i < length; i++) array[i] = random.Next(100, 1000);
+    for (int i = 0; i < length; i++) array[i] = random.Next(0, 100);
     return array;
 }
 
@@ -47,25 +47,25 @@ int evenNumbers = EvenNumbers(array);
 Console.WriteLine($"Чётных чисел: {evenNumbers}");
 */
 // Задача 36
-/*
+
 int OddNumbers(int[] array)
 {
-    int count = 0;
-    for (int i = 0; i < length; i++)
+    int sum = 0;
+    for (int i = 1; i < length; i = i + 2)
     {
-        if (array[i] % 2 != 0) count++;
+       sum = sum + array[i];
     }
-    return count;
+    return sum;
 }
 int oddNumber = OddNumbers(array);
-Console.WriteLine($"Нечётных чисел: {oddNumber}");
-*/
+Console.WriteLine($"Сумма чисел стоящих на нечётных местах: {oddNumber}");
+/*
 int GetMaxNumber(int[] array)
 {
     int maxArray = array[0];
     for (int i = 1; i < length; i++)
     {
-        if(maxArray < array[i])
+        if (maxArray < array[i])
         {
             maxArray = array[i];
         }
@@ -77,11 +77,11 @@ int GetMinNumber(int[] array)
     int minArray = array[0];
     for (int i = 1; i < length; i++)
     {
-        if(minArray > array[i] ) minArray = array[i];
+        if (minArray > array[i]) minArray = array[i];
     }
     return minArray;
 }
-if(GetMaxNumber(array) == GetMinNumber(array))
+if (GetMaxNumber(array) == GetMinNumber(array))
 {
     Console.WriteLine("Как не странно, но наибольший элемент равен наименьшему О_о");
 }
@@ -90,3 +90,4 @@ Console.WriteLine(GetMinNumber(array));
 
 int divNumbers = GetMaxNumber(array) - GetMinNumber(array);
 Console.WriteLine($"Разница между наибольшим элементом и наименьшим равна: {divNumbers}");
+*/
